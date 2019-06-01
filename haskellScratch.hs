@@ -51,6 +51,10 @@ fizzBuzz n | n `mod` 15 == 0  = "FizzBuzz"
        | n `mod` 5  == 0  = "Buzz"
        | otherwise        = show n
 
+fizzBuzz' :: [Int] -> [String]
+fizzBuzz' [] = []
+fizzBuzz' (n:ns) = fizzBuzz n : fizzBuzz' ns
+
 -- Sieve of Eratosthenes
 
 sieve :: Integral a => [a] -> [a]
