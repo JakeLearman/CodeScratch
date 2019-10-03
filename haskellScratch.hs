@@ -1,4 +1,7 @@
 
+module HaskellScratch where
+
+import Data.Function
 -- Sorting Algorthims
 
 -- Quicksort
@@ -63,3 +66,16 @@ sieve (p:ps) = p : sieve [x | x <- ps, x `mod` p /= 0]
 
 primeNumbers :: [Integer] 
 primeNumbers  = sieve [2..]
+
+-- Palindromes
+
+palindromes :: String -> Bool
+palindromes s = (reverse s == s)
+
+-- Fibbonacci
+
+fibList :: [Integer]
+fibList = Data.Function.fix $ (0:) . scanl (+) 1
+
+fibonacci :: Int -> Integer
+fibonacci n = fibList !! n -- Gets nth element of fibonacci
